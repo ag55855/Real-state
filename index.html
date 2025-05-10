@@ -1,245 +1,318 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Real Estate</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="st.css">
-  <style>
-    .carousel-item img {
-      height: 250px;
-      object-fit: cover;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-      transition: transform 0.3s ease-in-out;
-    }
-    .hero {
-      background: url('OIP (1).jpg') no-repeat center center/cover;
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: bold;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    }
-    .hero p {
-      font-size: 1.5rem;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    }
-  </style>
-</head>
-
-<body>
-  <button id="scrollToTop" class="btn btn-primary rounded-circle" title="Scroll to top">
-    <i class="fa fa-arrow-up"></i>
-  </button>
-  <!-- Header -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Real state</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      ></button>
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="properties.html">properties</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">contact us</a>
-          </li>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>موقع عقارات</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css"
+    />
+    <link rel="stylesheet" href="./file_css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="./index.html">عقارك</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
         
-          </li>
-          
-        </ul>
-        <form class="d-flex ms-auto">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Find your home"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success" type="submit">
-            Search
-          </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="./index.html">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="./Properties for sale.html">للبيع</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="./Properties for rent.html">للإيجار</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="./add_properties.html">أضف عقار</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="./aboutus.html">من نحن</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="./contactus.html">تواصل معنا</a>
+            </li>
+          </ul>
+          <a href="./login.html" class="btn btn-outline-primary">تسجيل الدخول</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="hero bg-dark text-white text-center py-5 hero-banner"
+    >
+      <div class="container">
+        <h1 class="mb-4">ابحث عن عقارك الآن</h1>
+        <form class="row g-2 justify-content-center">
+          <div class="col-md-3">
+            <input type="text" class="form-control" placeholder="المدينة" />
+          </div>
+          <div class="col-md-3">
+            <label for="propertyType" class="visually-hidden">اختر نوع العقار</label>
+            <select id="propertyType" class="form-select" title="اختر نوع العقار">
+              <option>نوع العقار</option>
+              <option>شقة</option>
+              <option>فيلا</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <input
+              type="number"
+              class="form-control"
+              placeholder="الحد الأقصى للسعر"
+            />
+          </div>
+          <div class="col-md-2">
+            <button class="btn btn-warning w-100">بحث</button>
+          </div>
         </form>
       </div>
-    </div>
-  </nav>
-  <header class="hero">
-    <div class="container">
-      <h1>Find Your Dream Home</h1>
-      <p>Discover the best properties at the best prices</p>
-    </div>
-  </header>
-  <section class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center mb-4">Search for Properties</h2>
-      <form class="row g-3">
-        <div class="col-md-3">
-          <input type="text" class="form-control" placeholder="Location">
-        </div>
-        <div class="col-md-3">
-          <label for="propertyType" class="form-label">Property Type</label>
-          <select id="propertyType" class="form-select">
-            <option selected>Property Type</option>
-            <option>Apartment</option>
-            <option>Villa</option>
-            <option>Land</option>
-          </select>
-        </div>
-        <div class="col-md-3">
-          <input type="number" class="form-control" placeholder="Price Range (e.g., 100000)">
-        </div>
-        <div class="col-md-3">
-          <button type="submit" class="btn btn-primary w-100">Search</button>
-        </div>
-      </form>
-    </div>
-  </section>
-
-  <!-- Featured Properties -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center mb-4">Featured Properties</h2>
-      <div id="featuredPropertiesCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <!-- المجموعة الأولى من الصور -->
-          <div class="carousel-item active">
-            <div class="row g-4">
-              <div class="col-md-4">
-                <div class="card">
-                  <img src="1-45.jpg" class="card-img-top" alt="Modern Apartment">
-                  <div class="card-body">
-                    <h5 class="card-title">Modern Apartment</h5>
-                    <p class="card-text">A beautiful apartment located in the heart of the city.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="card">
-                  <img src="6069.jpg" class="card-img-top" alt="Luxury Villa">
-                  <div class="card-body">
-                    <h5 class="card-title">Luxury Villa</h5>
-                    <p class="card-text">A stunning villa with a private pool and garden.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="card">
-                  <img src="3786.jpg" class="card-img-top" alt="Cozy House">
-                  <div class="card-body">
-                    <h5 class="card-title">Cozy House</h5>
-                    <p class="card-text">A cozy house in a quiet neighborhood.</p>
-                  </div>
-                </div>
+    </section>
+    <!-- Featured Properties Section -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-5">عقارات مميزة</h2>
+        <div class="row g-4">
+          <!-- عقار 1 -->
+          <div class="col-md-4">
+            <div class="card h-100">
+              <img
+                src="../Real State/images/1-64-scaled.jpg"
+                class="card-img-top"
+                alt="عقار 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">شقة فاخرة في الرياض</h5>
+                <p class="card-text">3 غرف - 2 حمام - 150 م²</p>
+                <p class="text-primary fw-bold">750,000 ريال</p>
+                <a href="#" class="btn btn-outline-primary">عرض التفاصيل</a>
               </div>
             </div>
           </div>
-          <!-- المجموعة الثانية من الصور -->
-          <div class="carousel-item">
-            <div class="row g-4">
-              <div class="col-md-4">
-                <div class="card">
-                  <img src="R (1).jpg" class="card-img-top" alt="Penthouse">
-                  <div class="card-body">
-                    <h5 class="card-title">Penthouse</h5>
-                    <p class="card-text">A luxurious penthouse with stunning views.</p>
-                  </div>
-                </div>
+
+          <!-- عقار 2 -->
+          <div class="col-md-4">
+            <div class="card h-100">
+              <img
+                src="../Real State/images/3003-8.jpg.png"
+                class="card-img-top"
+                alt="عقار 2"
+              />
+              <div class="card-body">
+                <h5 class="card-title">فيلا مع مسبح في جدة</h5>
+                <p class="card-text">5 غرف - 4 حمام - 350 م²</p>
+                <p class="text-primary fw-bold">2,100,000 ريال</p>
+                <a href="#" class="btn btn-outline-primary">عرض التفاصيل</a>
               </div>
-              <div class="col-md-4">
-                <div class="card">
-                  <img src="منزل-بسيط-1.jpg" class="card-img-top" alt="Beach House">
-                  <div class="card-body">
-                    <h5 class="card-title">Beach House</h5>
-                    <p class="card-text">A beautiful house located right by the beach.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="card">
-                  <img src="1473-2.jpg" class="card-img-top" alt="Country Cottage">
-                  <div class="card-body">
-                    <h5 class="card-title">Country Cottage</h5>
-                    <p class="card-text">A charming cottage surrounded by nature.</p>
-                  </div>
-                </div>
+            </div>
+          </div>
+          <!-- عقار 3 -->
+          <div class="col-md-4">
+            <div class="card h-100">
+              <img
+                src="../Real State/images/1-64-scaled.jpg"
+                class="card-img-top"
+                alt="عقار 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">شقة راقية في الدمام</h5>
+                <p class="card-text">2 غرف - 1 حمام - 100 م²</p>
+                <p class="text-primary fw-bold">480,000 ريال</p>
+                <a href="#" class="btn btn-outline-primary">عرض التفاصيل</a>
               </div>
             </div>
           </div>
         </div>
-        <!-- أزرار التنقل -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#featuredPropertiesCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-<span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#featuredPropertiesCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
-    </div>
-  </section>
+    </section>
+    <!-- Why Choose Us Section -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">لماذا تختارنا؟</h2>
+        <div class="row text-center g-4">
+          <!-- ميزة 1 -->
+          <div class="col-md-4">
+            <div class="p-4 border rounded shadow-sm h-100">
+              <i class="fas fa-home fa-3x text-primary mb-3"></i>
+              <h5 class="fw-bold">عقارات موثوقة</h5>
+              <p class="text-muted">
+                كل الإعلانات يتم التحقق منها من قبل فريقنا لضمان الجودة والثقة.
+              </p>
+            </div>
+          </div>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white py-4">
-    <div class="container">
-      <div class="row">
-        <!-- About Us -->
-        <div class="col-md-4">
-          <h5>About Us</h5>
-          <p>
-            We are a leading real estate company offering the best properties to
-            help you find your dream home.
-          </p>
-        </div>
-        <!-- Quick Links -->
-        <div class="col-md-4">
-          <h5>Quick Links</h5>
-          <ul class="list-unstyled">
-            <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
-            <li><a href="properties.html" class="text-white text-decoration-none">Properties</a></li>
-            <li><a href="contact.html" class="text-white text-decoration-none">Contact Us</a></li>
-          </ul>
-        </div>
-        <!-- Contact Info -->
-        <div class="col-md-4">
-          <h5>Contact Info</h5>
-          <p>Email: info@realestate.com</p>
-          <p>Phone: +123 456 7890</p>
-          <p>Address: 123 Main Street, City, Country</p>
+          <!-- ميزة 2 -->
+          <div class="col-md-4">
+            <div class="p-4 border rounded shadow-sm h-100">
+              <i class="fas fa-headset fa-3x text-primary mb-3"></i>
+              <h5 class="fw-bold">دعم متواصل</h5>
+              <p class="text-muted">
+                فريق دعم جاهز للرد على استفساراتك ومساعدتك في أي وقت.
+              </p>
+            </div>
+          </div>
+
+          <!-- ميزة 3 -->
+          <div class="col-md-4">
+            <div class="p-4 border rounded shadow-sm h-100">
+              <i class="fas fa-tags fa-3x text-primary mb-3"></i>
+              <h5 class="fw-bold">أفضل الأسعار</h5>
+              <p class="text-muted">
+                نساعدك في العثور على أفضل الصفقات والأسعار المناسبة لك.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-      <hr class="bg-white" />
-      <div class="text-center">
-        <p>&copy; 2025 Real Estate Website. All Rights Reserved.</p>
+    </section>
+    <!-- Testimonials Section -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-5">ماذا يقول عملاؤنا؟</h2>
+
+        <div
+          id="testimonialCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner text-center">
+            <!-- رأي 1 -->
+            <div class="carousel-item active">
+              <blockquote class="blockquote">
+                <p class="mb-4">
+                  موقع ممتاز، سهل الاستخدام ووجدت شقتي خلال يومين فقط!
+                </p>
+                <footer class="blockquote-footer">أحمد سالم</footer>
+              </blockquote>
+            </div>
+
+            <!-- رأي 2 -->
+            <div class="carousel-item">
+              <blockquote class="blockquote">
+                <p class="mb-4">
+                  الدعم الفني متعاون جدًا وساعدوني في إضافة إعلاني بسهولة.
+                </p>
+                <footer class="blockquote-footer">سارة محمد</footer>
+              </blockquote>
+            </div>
+
+            <!-- رأي 3 -->
+            <div class="carousel-item">
+              <blockquote class="blockquote">
+                <p class="mb-4">
+                  أفضل منصة عقارات استخدمتها، أنصح الجميع بتجربتها!
+                </p>
+                <footer class="blockquote-footer">عبدالله الشهري</footer>
+              </blockquote>
+            </div>
+          </div>
+          <!-- أزرار التنقل -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide="prev"
+            title="Previous Slide"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide="next"
+            title="Next Slide"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
+          </button>
+        </div>
       </div>
-    </div>
-  </footer>
-  
+    </section>
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+      <div class="container">
+        <div class="row">
+          <!-- عن الموقع -->
+          <div class="col-md-4 mb-4">
+            <h5>عن الموقع</h5>
+            <p>
+              موقع عقارات يساعدك في العثور على بيت أحلامك بسهولة وثقة، مع عروض
+              مميزة وخدمات متنوعة.
+            </p>
+          </div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/script.js"></script>
-</body>
+          <!-- روابط سريعة -->
+          <div class="col-md-4 mb-4">
+            <h5>روابط سريعة</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="./index.html" class="text-white text-decoration-none"
+                  >الرئيسية</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./Properties for rent.html"
+                  class="text-white text-decoration-none"
+                  >تصفح العقارات</a
+                >
+              </li>
+              <li>
+                <a href="./aboutus.html" class="text-white text-decoration-none"
+                  >من نحن</a
+                >
+              </li>
+              <li>
+                <a href="./contactus.html" class="text-white text-decoration-none"
+                  >تواصل معنا</a
+                >
+              </li>
+            </ul>
+          </div>
 
+          <!-- تواصل معنا -->
+          <div class="col-md-4 mb-4">
+            <h5>تواصل معنا</h5>
+            <p><i class="fas fa-envelope me-2"></i>info@realestate.com</p>
+            <p><i class="fas fa-phone me-2"></i>+966 555 555 555</p>
+            <div>
+              <a href="#" class="text-white me-2"
+                ><i class="fab fa-facebook fa-lg"></i
+              ></a>
+              <a href="#" class="text-white me-2"
+                ><i class="fab fa-twitter fa-lg"></i
+              ></a>
+              <a href="#" class="text-white me-2"
+                ><i class="fab fa-instagram fa-lg"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-secondary" />
+        <p class="text-center mb-0">جميع الحقوق محفوظة &copy; 2025</p>
+      </div>
+    </footer>
+    <script src="./js/index.js"></script>
+  </body>
 </html>
